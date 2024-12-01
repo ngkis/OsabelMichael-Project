@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Museum Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <script src="{% static 'blog/script.js' %}" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'post_list' %}">Posts</a></li>
+            <li><a href="{% url 'announcement_list' %}">Announcements</a></li>
+            <li><a href="{% url 'feedback' %}">Feedback</a></li>
+            <li><a href="{% url 'category_list' %}">Categories</a></li>
+        </ul>
+    </nav>
+    <center>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</center>
+    <footer>
+        <p>&copy; Philippines Museum</p>
+    </footer>
+</body>
+</html>

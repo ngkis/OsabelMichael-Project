@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<section class="view-post">
+    <h1>{{ post.title }}</h1>
+    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    <p>Category: {{ post.category.name }}</p>
+    <p>By {{ post.author }} on {{ post.date_created|date:"F d, Y" }}</p>
+    <div class="post-content">
+        {{ post.description }}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+
+
+<section class="feedback-form">
+    <h1>Submit Feedback</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="message" rows="5" placeholder="Your feedback here..."></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+{% endblock %}
